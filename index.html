@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India Weather — Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app">
+      <main class="main">
+        <div class="topbar">
+          <div class="brand">
+            <div class="logo">IN</div>
+            <div>
+              <h1>India Weather</h1>
+              <p class="muted">Formal, easy-to-use weather dashboard</p>
+            </div>
+          </div>
+
+          <div class="controls">
+            <select class="select state" aria-label="Select state">
+              
+            </select>
+            <select class="select district" aria-label="Select district">
+              <option>Select District</option>
+            </select>
+          </div>
+        </div>
+
+        <section class="content">
+          <div>
+            <div class="card weather-hero">
+              <div class="weather-left">
+                <div class="muted">Monday, 24 Dec, 2025</div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    margin-top: 8px;
+                  "
+                >
+                  <div>
+                    <div class="temp">26°C</div>
+                    <div class="meta">High: 27° Low: 19° — Feels like 28°</div>
+                  </div>
+                </div>
+
+                <div class="forecast" aria-hidden="true">
+                </div>
+              </div>
+
+              <div class="weather-visual">
+                <div class="icon weatherIcon">🌤️</div>
+                <div class="cond muted weather_text">Cloudy</div>
+                <div
+                  style="margin-top: 8px; font-size: 14px; color: var(--muted)"
+                >
+                  Sunrise 6:45 AM • Sunset 5:30 PM
+                </div>
+              </div>
+            </div>
+
+            <div class="card bottom" style="margin-top: 12px">
+              <div>
+                <h3 style="margin: 0 0 8px 0">Today / Week</h3>
+                <div style="display: flex; gap: 8px; align-items: center">
+                  <div class="item" style="background: transparent; padding: 0">
+                    2PM • 28° • ⛅
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 style="margin: 0 0 8px 0">Sunrise & Length</h3>
+                <div class="muted">
+                  Sunrise 6:45 AM<br />Sunset 5:30 PM<br />Length of day 10h 23m
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="right-col">
+            <div class="card">
+              <h3 style="margin: 0 0 12px 0">Today Highlight</h3>
+              <div class="highlights">
+                <div class="highlight">
+                  Chance of Rain<br /><strong>30%</strong>
+                </div>
+                <div class="highlight">
+                  UV Index<br /><strong class="muted">Moderate</strong>
+                </div>
+                <div class="highlight">
+                  Wind Status<br /><strong class="wind_speed">12 km/h</strong>
+                </div>
+                <div class="highlight">Humidity<br /><strong class="humidity">68%</strong></div>
+              </div>
+            </div>
+
+            <div class="card other-cities">
+              <h3 style="margin: 0 0 8px 0">Other Cities</h3>
+              <div class="city">
+                <div>
+                  <strong>Delhi</strong>
+                  <div class="muted">IN</div>
+                </div>
+                <div>30° ☀️</div>
+              </div>
+              <div class="city">
+                <div>
+                  <strong>Mumbai</strong>
+                  <div class="muted">IN</div>
+                </div>
+                <div>27° 🌤️</div>
+              </div>
+              <div class="city">
+                <div>
+                  <strong>Bengaluru</strong>
+                  <div class="muted">IN</div>
+                </div>
+                <div>24° ⛅</div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <aside style="display: flex; flex-direction: column; gap: 12px">
+        <div class="card" style="padding: 18px">
+          <h3 style="margin: 0 0 10px 0">Search by State / District</h3>
+          <input
+            placeholder="Search state or district"
+            style="
+              width: 100%;
+              padding: 10px;
+              border-radius: 10px;
+              border: 1px solid rgba(255, 255, 255, 0.04);
+              background: transparent;
+              color: inherit;
+            "
+          />
+          <div style="margin-top: 12px">
+            <button
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                background: var(--accent);
+                color: #071022;
+                font-weight: 700;
+              "
+            >
+              Show Weather
+            </button>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 18px">
+          <h3 style="margin: 0 0 10px 0">UV / Alerts</h3>
+          <div class="muted">No active alerts</div>
+        </div>
+
+        <div class="card" style="padding: 18px">
+          <h3 style="margin: 0 0 10px 0">Quick Links</h3>
+          <div class="muted">All India • States • Districts • Maps</div>
+        </div>
+      </aside>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

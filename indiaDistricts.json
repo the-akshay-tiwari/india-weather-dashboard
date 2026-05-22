@@ -1,0 +1,265 @@
+{
+  "Select State": [
+    {
+      "district": "Select District"
+    }
+  ],
+
+  "Madhya Pradesh": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Jabalpur",
+      "lat": 23.1815,
+      "lon": 79.9864
+    },
+    {
+      "district": "Bhopal",
+      "lat": 23.2599,
+      "lon": 77.4126
+    },
+    {
+      "district": "Indore",
+      "lat": 22.7196,
+      "lon": 75.8577
+    },
+    {
+      "district": "Gwalior",
+      "lat": 26.2183,
+      "lon": 78.1828
+    }
+  ],
+
+  "Maharashtra": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Mumbai",
+      "lat": 19.0760,
+      "lon": 72.8777
+    },
+    {
+      "district": "Pune",
+      "lat": 18.5204,
+      "lon": 73.8567
+    },
+    {
+      "district": "Nagpur",
+      "lat": 21.1458,
+      "lon": 79.0882
+    },
+    {
+      "district": "Nashik",
+      "lat": 19.9975,
+      "lon": 73.7898
+    }
+  ],
+
+  "Delhi": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "New Delhi",
+      "lat": 28.6139,
+      "lon": 77.2090
+    },
+    {
+      "district": "North Delhi",
+      "lat": 28.7041,
+      "lon": 77.1025
+    }
+  ],
+
+  "Karnataka": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Bengaluru",
+      "lat": 12.9716,
+      "lon": 77.5946
+    },
+    {
+      "district": "Mysuru",
+      "lat": 12.2958,
+      "lon": 76.6394
+    },
+    {
+      "district": "Hubli",
+      "lat": 15.3647,
+      "lon": 75.1240
+    }
+  ],
+
+  "Tamil Nadu": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Chennai",
+      "lat": 13.0827,
+      "lon": 80.2707
+    },
+    {
+      "district": "Coimbatore",
+      "lat": 11.0168,
+      "lon": 76.9558
+    },
+    {
+      "district": "Madurai",
+      "lat": 9.9252,
+      "lon": 78.1198
+    }
+  ],
+
+  "Uttar Pradesh": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Lucknow",
+      "lat": 26.8467,
+      "lon": 80.9462
+    },
+    {
+      "district": "Kanpur",
+      "lat": 26.4499,
+      "lon": 80.3319
+    },
+    {
+      "district": "Varanasi",
+      "lat": 25.3176,
+      "lon": 82.9739
+    }
+  ],
+
+  "Rajasthan": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Jaipur",
+      "lat": 26.9124,
+      "lon": 75.7873
+    },
+    {
+      "district": "Udaipur",
+      "lat": 24.5854,
+      "lon": 73.7125
+    },
+    {
+      "district": "Jodhpur",
+      "lat": 26.2389,
+      "lon": 73.0243
+    }
+  ],
+
+  "Gujarat": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Ahmedabad",
+      "lat": 23.0225,
+      "lon": 72.5714
+    },
+    {
+      "district": "Surat",
+      "lat": 21.1702,
+      "lon": 72.8311
+    },
+    {
+      "district": "Vadodara",
+      "lat": 22.3072,
+      "lon": 73.1812
+    }
+  ],
+
+  "West Bengal": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Kolkata",
+      "lat": 22.5726,
+      "lon": 88.3639
+    },
+    {
+      "district": "Howrah",
+      "lat": 22.5958,
+      "lon": 88.2636
+    },
+    {
+      "district": "Darjeeling",
+      "lat": 27.0360,
+      "lon": 88.2627
+    }
+  ],
+
+  "Bihar": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Patna",
+      "lat": 25.5941,
+      "lon": 85.1376
+    },
+    {
+      "district": "Gaya",
+      "lat": 24.7914,
+      "lon": 85.0002
+    }
+  ],
+
+  "Punjab": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Amritsar",
+      "lat": 31.6340,
+      "lon": 74.8723
+    },
+    {
+      "district": "Ludhiana",
+      "lat": 30.9010,
+      "lon": 75.8573
+    }
+  ],
+
+  "Haryana": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Gurugram",
+      "lat": 28.4595,
+      "lon": 77.0266
+    },
+    {
+      "district": "Faridabad",
+      "lat": 28.4089,
+      "lon": 77.3178
+    }
+  ],
+
+  "Kerala": [
+    {
+      "district": "Select District"
+    },
+    {
+      "district": "Kochi",
+      "lat": 9.9312,
+      "lon": 76.2673
+    },
+    {
+      "district": "Thiruvananthapuram",
+      "lat": 8.5241,
+      "lon": 76.9366
+    }
+  ]
+}

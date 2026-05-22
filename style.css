@@ -1,0 +1,278 @@
+:root {
+  --bg: #0f1724;
+  --card: #0f1724;
+  --panel: #0b1220;
+  --muted: #9aa6bf;
+  --accent: #5b9cff;
+  --glass: rgba(255, 255, 255, 0.03);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    Segoe UI,
+    Roboto,
+    Arial;
+  background: linear-gradient(180deg, #071022 0%, #071822 100%);
+  color: #e6eef8;
+  -webkit-font-smoothing: antialiased;
+  padding: 28px;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+}
+
+/* Sidebar (left column main) */
+.main {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.brand h1 {
+  font-size: 16px;
+  margin: 0;
+}
+.brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.select {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 160px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.weather-hero {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.weather-left {
+  flex: 1;
+}
+.temp {
+  font-size: 48px;
+  font-weight: 700;
+}
+.meta {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.weather-visual {
+  width: 160px;
+  height: 120px;
+  background: linear-gradient(135deg, #12223a, #0b1530);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.weather-visual .icon {
+  font-size: 34px;
+}
+.weather-visual .cond {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.forecast {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.forecast .time {
+  font-size: 12px;
+  color: var(--muted);
+}
+.forecast .t {
+  font-weight: 600;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.highlight {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--muted);
+}
+
+.other-cities {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.city {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+
+/* Footer area with sunrise/sunset and longer forecast */
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* small screens */
+@media (max-width: 1000px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .weather-visual {
+    width: 120px;
+  }
+}
+
+/* utility */
+.muted {
+  color: var(--muted);
+}
+
+.card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 14px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+
+  min-width: 90px;
+
+  flex-shrink: 0;
+
+  scroll-snap-align: start;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.forecast{
+  display:flex;
+  gap:12px;
+
+  margin-top:12px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  width:100%;
+  max-width:100%;
+
+  padding-bottom:10px;
+
+  scroll-snap-type:x mandatory;
+}
+
+.weather-left{
+   width:10px;
+   flex:1;
+}
