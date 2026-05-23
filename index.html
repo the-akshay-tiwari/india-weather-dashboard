@@ -4,13 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>India Weather — Dashboard</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="">
+    <div class="loader-container">
+      <button class="loader">Loading...</button>
+    </div>
+
     <div class="app">
       <main class="main">
         <div class="topbar">
@@ -23,9 +29,7 @@
           </div>
 
           <div class="controls">
-            <select class="select state" aria-label="Select state">
-              
-            </select>
+            <select class="select state" aria-label="Select state"></select>
             <select class="select district" aria-label="Select district">
               <option>Select District</option>
             </select>
@@ -51,8 +55,7 @@
                   </div>
                 </div>
 
-                <div class="forecast" aria-hidden="true">
-                </div>
+                <div class="forecast" aria-hidden="true"></div>
               </div>
 
               <div class="weather-visual">
@@ -97,7 +100,9 @@
                 <div class="highlight">
                   Wind Status<br /><strong class="wind_speed">12 km/h</strong>
                 </div>
-                <div class="highlight">Humidity<br /><strong class="humidity">68%</strong></div>
+                <div class="highlight">
+                  Humidity<br /><strong class="humidity">68%</strong>
+                </div>
               </div>
             </div>
 
@@ -172,6 +177,11 @@
       </aside>
     </div>
 
+    <div class="card weekly-weather-card">
+      <h3 class="weekly-heading">7 Day Forecast</h3>
+
+      <div class="weekly-container"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>

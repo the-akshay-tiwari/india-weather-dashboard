@@ -1,6 +1,8 @@
 let weatherData = {};
 let weatherCodeData = {};
 
+const loaderContainer = document.querySelector(".loader-container");
+
 async function loadData() {
   const response = await fetch("./indiaDistricts.json");
   const codeRes = await fetch("./weatherCode.json");
@@ -49,7 +51,7 @@ stateSelect.addEventListener("change", () => {
   });
 });
 
-districtSelect.addEventListener("change", () => {
+districtSelect.addEventListener("change", async () => {
   // console.log("district selected");
   // let selectedState=stateSelect.value;
   // let selectedDistrict=districtSelect.value;
@@ -65,8 +67,13 @@ districtSelect.addEventListener("change", () => {
 
   // console.log(currDistLat+" "+currDistLong);
 
-  fetchWeather(currDistLat, currDistLong);
-  fetchHourlyWeather(currDistLat, currDistLong);
+  loaderContainer.style.display = "flex";
+
+  await fetchWeather(currDistLat, currDistLong);
+  await fetchHourlyWeather(currDistLat, currDistLong);
+  await fetchWeeklyWeather(currDistLat, currDistLong);
+
+  loaderContainer.style.display = "none";
 });
 
 const temp = document.querySelector(".temp");
@@ -97,6 +104,23 @@ async function fetchWeather(lat, long) {
   // console.log(weatherCodeData[data.current.weather_code].text);
   weather_text.innerText = weatherCodeData[data.current.weather_code].text;
   weatherIcon.innerText = weatherCodeData[data.current.weather_code].icon;
+
+  let code=data.current.weather_code;
+
+  if(code==0){
+    document.body.setAttribute("class","sunny-bg")
+  }else if(code>=1 && code<=3){
+    document.body.setAttribute("class","cloudy-bg")
+  }else if(code==45 || code==48){
+    document.body.setAttribute("class","fog-bg")
+  }else if((code >=51 && code <=67) || (code >=80 && code <=82)){
+    document.body.setAttribute("class","rain-bg")
+  }else if((code >=71 && code <=77) || (code >=85 && code <=86)){
+    document.body.setAttribute("class","winter-bg")
+  }else if((code >=95)){
+    document.body.setAttribute("class","thunder-bg")
+  }
+
 }
 
 const forecast = document.querySelector(".forecast");
@@ -106,29 +130,43 @@ async function fetchHourlyWeather(lat, long) {
 
   let response = await fetch(urlHourly);
   let data = await response.json();
-  console.log(data);
+  // console.log(data);
 
   let forecastTimeArr = data.hourly;
-  console.log(forecastTimeArr.temperature_2m);
+  // console.log(forecastTimeArr.temperature_2m);
 
   forecast.innerHTML = "";
 
   for (let i = 0; i <= 12; i++) {
     let card = document.createElement("div");
-    card.setAttribute("class","item");
+    card.setAttribute("class", "item");
     card.innerHTML = `<div class="time">${forecastTimeArr.time[i].split("T")[1]}</div>
                      <div class="icon">${weatherCodeData[forecastTimeArr.weather_code[i]].icon}</div>
                      <div class="t">${forecastTimeArr.temperature_2m[i]}°C</div>`;
 
     forecast.appendChild(card);
   }
-
-  // forecast.innerHTML+=`<div class="item">
-  //                   <div class="time">1PM</div>
-  //                   <div class="icon">☀️</div>
-  //                   <div class="t">29°</div>
-  //                 </div>`;
 }
 
-// let stateOpt=document.querySelector(".state");
-// console.log(stateOpt);
+const weeklyContainer = document.querySelector(".weekly-container");
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+async function fetchWeeklyWeather(lat, long) {
+  let urlWeekly = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weather_code,temperature_2m_max,temperature_2m_min`;
+
+  let response = await fetch(urlWeekly);
+  let data = await response.json();
+  console.log(data.daily);
+
+  for (let i = 0; i < 7; i++) {
+    let dailyCard = document.createElement("div");
+    dailyCard.setAttribute("class", "daily-card");
+    dailyCard.innerHTML = `<p class="day">${days[new Date(data.daily.time[i].split("T")[0]).getDay()]}</p>
+
+  <div class="daily-icon">${weatherCodeData[data.daily.weather_code[i]].icon}</div>
+
+  <div class="daily-temp"><span>${data.daily.temperature_2m_max[i]}°</span> / <span>${data.daily.temperature_2m_min[i]}°</span></div>`;
+
+    weeklyContainer.appendChild(dailyCard);
+  }
+}
