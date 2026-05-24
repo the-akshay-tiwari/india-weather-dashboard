@@ -6,6 +6,11 @@
     <title>India Weather — Dashboard</title>
 
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
@@ -33,6 +38,7 @@
             <select class="select district" aria-label="Select district">
               <option>Select District</option>
             </select>
+            <button class="location">📍My Location</button>
           </div>
         </div>
 
@@ -40,7 +46,8 @@
           <div>
             <div class="card weather-hero">
               <div class="weather-left">
-                <div class="muted">Monday, 24 Dec, 2025</div>
+                <div class="loc muted"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="muted date-day">Monday, 24 Dec, 2025</div>
                 <div
                   style="
                     display: flex;
@@ -62,6 +69,7 @@
                 <div class="icon weatherIcon">🌤️</div>
                 <div class="cond muted weather_text">Cloudy</div>
                 <div
+                  class="rise-set-time"
                   style="margin-top: 8px; font-size: 14px; color: var(--muted)"
                 >
                   Sunrise 6:45 AM • Sunset 5:30 PM
@@ -134,7 +142,7 @@
         </section>
       </main>
 
-      <aside style="display: flex; flex-direction: column; gap: 12px">
+      <!-- <aside style="display: flex; flex-direction: column; gap: 12px">
         <div class="card" style="padding: 18px">
           <h3 style="margin: 0 0 10px 0">Search by State / District</h3>
           <input
@@ -174,7 +182,7 @@
           <h3 style="margin: 0 0 10px 0">Quick Links</h3>
           <div class="muted">All India • States • Districts • Maps</div>
         </div>
-      </aside>
+      </aside> -->
     </div>
 
     <div class="card weekly-weather-card">

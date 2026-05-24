@@ -26,8 +26,8 @@ body {
 .app {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 360px;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 360px; */
   gap: 24px;
 }
 
@@ -124,8 +124,8 @@ body {
 }
 
 .weather-visual {
-  width: 160px;
-  height: 120px;
+  width: 125px;
+  height: 170px;
   background: linear-gradient(135deg, #12223a, #0b1530);
   border-radius: 12px;
   display: flex;
@@ -202,6 +202,18 @@ body {
   }
   .weather-visual {
     width: 120px;
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar{
+    flex-direction: column;
+  }
+  .controls{
+    flex-direction: column;
+  }
+  .weekly-container{
+    flex-direction: column;
   }
 }
 
@@ -405,4 +417,23 @@ body {
     #475569 45%,
     #cbd5e1 100%
   );
+}
+
+.location{
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 160px;
+}
+
+.location:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.loc{
+  margin-bottom: 10px;
 }
