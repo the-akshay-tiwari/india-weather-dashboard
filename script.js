@@ -93,9 +93,10 @@ const weatherIcon = document.querySelector(".weatherIcon");
 
 async function fetchWeather(lat, long) {
   let urlCurrent = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code`;
+  let data;
   try {
     let response = await fetch(urlCurrent);
-    let data = await response.json();
+    data = await response.json();
     // console.log(data);
   } catch (err) {
     alert(err.message);
@@ -135,10 +136,11 @@ const forecast = document.querySelector(".forecast");
 
 async function fetchHourlyWeather(lat, long) {
   let urlHourly = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code`;
+  let data;
 
   try {
     let response = await fetch(urlHourly);
-    let data = await response.json();
+    data = await response.json();
     // console.log(data);
   } catch (err) {
     alert(err.message);
@@ -190,10 +192,11 @@ const loc = document.querySelector(".loc");
 
 async function fetchWeeklyWeather(lat, long) {
   let urlWeekly = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto`;
+  let data;
 
   try {
     let response = await fetch(urlWeekly);
-    let data = await response.json();
+    data = await response.json();
     // console.log(data.daily);
   } catch (err) {
     alert(err.message);
@@ -253,10 +256,11 @@ async function locationUpdate(lat, long) {
     let res = await fetch(url);
     let data = await res.json();
     // console.log(data.address);
+    loc.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.address.city_district},${data.address.state}`;
   } catch (err) {
     alert(err.message);
   }
-  loc.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.address.city_district},${data.address.state}`;
+  
 }
 
 async function currLocationWeather(lat, long) {
